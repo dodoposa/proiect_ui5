@@ -1,0 +1,22 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="Z801_TEST_BOOK_DOPO_SRV" xml:lang="en" sap:schema-version="1">
+            <EntityType Name="Bookch" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id_checkout"/>
+                </Key>
+                <Property Name="Title" Type="Edm.String" MaxLength="50" sap:label="Title"/>
+                <Property Name="Author" Type="Edm.String" MaxLength="50" sap:label="Author"/>
+                <Property Name="First_name" Type="Edm.String" MaxLength="50" sap:label="First_name"/>
+                <Property Name="Last_name" Type="Edm.String" MaxLength="50" sap:label="Last_name"/>
+                <Property Name="Date_checkout" Type="Edm.DateTime" Precision="0" sap:label="Date_checkout"/>
+                <Property Name="Date_return" Type="Edm.DateTime" Precision="0" sap:label="Date_return"/>
+            </EntityType>
+            <EntityContainer Name="Z801_LIBRARY_DOPO_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="BookschSet" EntityType="Z801_TEST_BOOK_DOPO_SRV.Booksch" sap:searchable="true" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="http://localhost:9555/sap/opu/odata/SAP/Z801_TEST_BOOK_DOPO_SRV/$metadata"/>
+            <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="http://localhost:9555/sap/opu/odata/SAP/Z801_TEST_BOOK_DOPO_SRV/$metadata"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

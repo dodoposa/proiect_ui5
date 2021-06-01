@@ -1,0 +1,75 @@
+<mvc:View
+	controllerName="org.ubb.books.controller.BookList"
+    xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+
+   <Table id="idBooksTable"
+		items="{
+			path: '/BooksSet',
+			sorter: {
+				path: 'Title'
+			}
+		}"
+		growing="true"
+		growingThreshold="10"
+		mode="SingleSelectLeft"
+		>
+
+		<headerToolbar>
+            <Toolbar>
+            <ToolbarSpacer></ToolbarSpacer>
+                <content>
+                    <Button
+                        text="Delete"
+                        press="onDeleteBook"
+                    />
+                    <Button
+                        text="Add Book"
+                        press="onInsertBook"
+                    />
+                    <Button
+                        text="Update Book"
+                        press="onUpdateBook"
+                    />
+                </content>
+            </Toolbar>
+        </headerToolbar>
+	
+		<columns>
+			<Column>
+				<Text text="{i18n>title}" />
+			</Column>
+			<Column>
+				<Text text="{i18n>author}" />
+			</Column>
+			<Column>
+				<Text text="Published on" />
+			</Column>
+			<Column>
+				<Text text="Language" />
+			</Column>
+         	<Column>
+				<Text text="Available No. of Books" />
+			</Column>
+			<Column>
+				<Text text="Total No. of Books" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<ObjectIdentifier
+						title="{Title}"
+						text="{Booksid}"/>
+					<Text text="{Author}" />
+					<Text text="{DatePublished}"/>
+					<Text text="{Language}" />
+					<Text text="{= parseInt(${NrAvailable}) }" />
+					<Text text="{= parseInt(${NrTotal}) }" />
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+   
+</mvc:View>
